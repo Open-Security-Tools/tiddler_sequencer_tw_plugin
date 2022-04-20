@@ -1,0 +1,21 @@
+created: 20220418165838700
+modified: 20220420193654197
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_list
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define tiddler_sequencer_list()
+<ol>
+<$list filter="[list[!!tiddler_sequencer_list]]">
+<li>
+<$link to={{!!title}}>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>
+</li>
+</$list>
+</ol>
+\end

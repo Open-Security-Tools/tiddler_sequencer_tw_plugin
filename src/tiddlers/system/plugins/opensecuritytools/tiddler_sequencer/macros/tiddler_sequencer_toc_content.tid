@@ -1,0 +1,52 @@
+created: 20220419155039065
+modified: 20220420193640579
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_toc_content
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define _display_node_name()
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field="title"/>
+</$list>
+\end
+
+\define _traverse()
+<li>
+<$list filter="[all[current]field:title<node>]" variable="ignore02">
+<<_display_node_name>>
+</$list>
+<$list filter="[all[current]!field:title<node>]" variable="ignore02">
+<$link><<_display_node_name>></$link>
+</$list>
+</li>
+<ul>
+<$list filter="[list[!!tiddler_sequencer_list]]">
+<<_traverse>>
+</$list>
+</ul>
+\end
+
+\define _display_tree()
+
+<ul>
+<<_traverse>>
+</ul>
+
+\end
+
+\define _tiddler_sequencer_toc_recursive()
+<$list filter="[all[current]get[tiddler_sequencer_parent]]">
+<<_tiddler_sequencer_toc_recursive>>
+</$list>
+<$list filter="[all[current]!has[tiddler_sequencer_parent]]">
+<<_display_tree>>
+</$list>
+\end
+
+\define tiddler_sequencer_toc()
+<$set name=node value=<<currentTiddler>>>
+<<_tiddler_sequencer_toc_recursive>>
+</$set>
+\end

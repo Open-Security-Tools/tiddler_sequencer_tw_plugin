@@ -1,0 +1,15 @@
+caption: Installation
+created: 20220419184930407
+modified: 20220420195200620
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/readme
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/installation
+type: text/vnd.tiddlywiki
+
+<$list filter="[title[$:/plugins/opensecuritytools/tiddler_sequencer]get[version]]">
+<div class="versionblock">The latest Tiddler Sequencer plugin version is <span class="versionnumber"><<currentTiddler>></span>
+</div>
+</$list>
+
+Drag [[$:/plugins/opensecuritytools/tiddler_sequencer]] into your wiki. 
+
+You'll also need [[$:/plugins/flibbles/relink]].

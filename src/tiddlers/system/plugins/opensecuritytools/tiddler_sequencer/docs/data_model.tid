@@ -1,0 +1,12 @@
+caption: Data Model
+created: 20220419183802734
+modified: 20220420193132720
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/data_model
+type: text/vnd.tiddlywiki
+
+Data model is encoded in two fields per tiddler:
+
+# `tiddler_sequencer_list` is used to construct a top down ordered tree of tiddlers. 
+# `tiddler_sequencer_parent` allows access navigation up the tree from any of the children.
+

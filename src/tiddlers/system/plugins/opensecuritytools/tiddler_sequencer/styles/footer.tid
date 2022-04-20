@@ -1,0 +1,28 @@
+created: 20220415150356305
+modified: 20220420193727527
+tags: $:/tags/Stylesheet
+title: $:/plugins/opensecuritytools/tiddler_sequencer/styles/footer
+type: text/css
+
+div.tiddler_sequencer_footer {
+  border-top: 1px solid darkgrey;
+  padding-top: 10px;
+  display: flex;
+}
+
+div.tiddler_sequencer_footer div {
+  flex: 1;
+  // border: 2px solid yellow;
+}
+
+div.tiddler_sequencer_footer div:nth-child(1) {
+  text-align: left;
+}
+
+div.tiddler_sequencer_footer div:nth-child(2) {
+  text-align: center;
+}
+
+div.tiddler_sequencer_footer div:nth-child(3) {
+  text-align: right;
+}
