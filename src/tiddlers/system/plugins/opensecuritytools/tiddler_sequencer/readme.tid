@@ -1,11 +1,7 @@
-caption: Tiddler Sequencer
-created: 20220415050406360
-modified: 20220420195022836
-tiddler_sequencer_list: $:/plugins/opensecuritytools/tiddler_sequencer/docs/overview $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation $:/plugins/opensecuritytools/tiddler_sequencer/docs/installation
+created: 20220420204749017
+modified: 20220420204809744
+tags: 
 title: $:/plugins/opensecuritytools/tiddler_sequencer/readme
 type: text/vnd.tiddlywiki
 
-`tiddler_sequencer` is a Tiddlywiki plugin for providing simple documentation structure.
-This documentation is structured using this plugin and has the following sections:
-
-<<tiddler_sequencer_list>>
+See [[$:/plugins/opensecuritytools/tiddler_sequencer/docs/documentation]]
