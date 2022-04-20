@@ -1,0 +1,13 @@
+caption: Under the Hood
+created: 20220418211728722
+modified: 20220420193334657
+secorg_parent: Tiddler Sequencer
+tags: 
+tiddler_sequencer_list: $:/plugins/opensecuritytools/tiddler_sequencer/docs/data_model $:/plugins/opensecuritytools/tiddler_sequencer/docs/handling_renaming $:/plugins/opensecuritytools/tiddler_sequencer/docs/macros $:/plugins/opensecuritytools/tiddler_sequencer/docs/styles $:/plugins/opensecuritytools/tiddler_sequencer/docs/templates
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/readme
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation
+type: text/vnd.tiddlywiki
+
+The macros, views and styles are encapsulated in a plugin.
+
+<<tiddler_sequencer_list>>

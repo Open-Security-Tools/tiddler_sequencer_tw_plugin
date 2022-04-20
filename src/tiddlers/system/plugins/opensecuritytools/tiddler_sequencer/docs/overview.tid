@@ -1,0 +1,22 @@
+caption: Overview
+created: 20220418205853214
+modified: 20220420193002369
+tiddler_sequencer_list: 
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/readme
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/overview
+type: text/vnd.tiddlywiki
+
+!! Why?
+
+TiddlyWiki is designed to provide a very flexible mechanism to link and associate blocks of information.
+However, there are scenarios where it is more convenient to lead a reader through a structured sequence of information - a bit like the chapters, sections and paragraphs in a book.
+
+This plugin provides the mechanism for that structured sequencing.
+
+!! How does it work?
+
+A parent tiddler contains an ordered list of child tiddlers.
+A child tiddler contains a reference to its parent.
+These relationships are used when rendering to provide navigation links.
+The navigation links guide a reader around the tree of information in the desired order.
+

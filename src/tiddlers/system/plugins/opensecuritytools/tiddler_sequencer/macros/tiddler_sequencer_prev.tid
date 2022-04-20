@@ -1,0 +1,41 @@
+created: 20220417070958127
+modified: 20220420193744162
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_prev
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define _traverse_rht()
+<$list filter="[list[!!tiddler_sequencer_list]last[]]">
+<<_traverse_rht>>
+</$list>
+<$list filter="[list[!!tiddler_sequencer_list]last[]then[]else<currentTiddler>]">
+<$list filter="[all[current]]">
+←&nbsp; Previous: <$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>
+</$list>
+</$list>
+\end
+
+\define tiddler_sequencer_prev(tid)
+<$list filter="[title[$tid$]get[tiddler_sequencer_parent]]">
+<$set name=parent value=<<currentTiddler>>>
+<$list filter="[list[!!tiddler_sequencer_list]before[$tid$]else[]]">
+<$list filter="[all[current]]">
+<<_traverse_rht>>
+</$list>
+<$list filter="[title<currentTiddler>is[blank]then<parent>]">
+←&nbsp; Previous: <$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>
+</$list>
+</$list>
+</$set>
+</$list>
+\end

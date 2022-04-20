@@ -1,0 +1,26 @@
+created: 20220416203407207
+modified: 20220420193624745
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_tree
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define traverse()
+<li><$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field="title"/></$list></$link></li>
+<ul>
+<$list filter="[list[!!tiddler_sequencer_list]]">
+<<traverse>>
+</$list>
+</ul>
+\end
+
+\define tiddler_sequencer_tree(tid)
+<$list filter="[title[$tid$]]">
+<ul>
+<<traverse>>
+</ul>
+</$list>
+\end

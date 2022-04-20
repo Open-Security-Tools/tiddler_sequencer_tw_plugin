@@ -1,0 +1,64 @@
+created: 20220416211313107
+modified: 20220420193805907
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_next
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define _get_next_from_parent()
+<$set name=child value=<<currentTiddler>>>
+<$list filter="[all[current]get[tiddler_sequencer_parent]]">
+<$list filter="[list[!!tiddler_sequencer_list]after<child>else[]!is[blank]]">
+Next: <$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>&nbsp;→
+</$list>
+<$list filter="[list[!!tiddler_sequencer_list]after<child>else[]is[blank]]" variable="ignore01">
+<<_get_next_from_parent>>
+</$list>
+</$list>
+</$set>
+\end
+
+\define _get_skip_from_parent()
+<$set name=child value=<<currentTiddler>>>
+<$list filter="[all[current]get[tiddler_sequencer_parent]]">
+<$list filter="[list[!!tiddler_sequencer_list]after<child>else[]!is[blank]]">
+<br>Skip to: <$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>&nbsp;→
+</$list>
+<$list filter="[list[!!tiddler_sequencer_list]after<child>else[]is[blank]]" variable="ignore01">
+<<_get_skip_from_parent>>
+</$list>
+</$list>
+</$set>
+\end
+
+\define _tiddler_sequencer_skip()
+<$list filter="[list[!!tiddler_sequencer_list]first[]]" variable="_ignore">
+<<_get_skip_from_parent>>
+</$list>
+\end
+
+\define tiddler_sequencer_next(tid)
+<$list filter="[title[$tid$]]">
+<$list filter="[list[!!tiddler_sequencer_list]first[]]">
+Next: <$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>&nbsp;→
+</$list>
+<$list filter="[all[current]!has[tiddler_sequencer_list]]">
+<<_get_next_from_parent>>
+</$list>
+<<_tiddler_sequencer_skip>>
+</$list>
+\end
+

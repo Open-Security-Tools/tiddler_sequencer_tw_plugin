@@ -1,0 +1,32 @@
+created: 20220418161516307
+modified: 20220420193753787
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_path
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define _rec_path()
+<$list filter="[all[current]get[tiddler_sequencer_parent]]">
+<<_rec_path>>
+</$list>
+<$list filter="[all[current]!field:tiddler_sequencer_parent[]]">
+/
+</$list>
+<$list filter="[all[current]field:tiddler_sequencer_parent[]]">
+&uarr;&nbsp; Path: 
+</$list>
+<$link>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>
+\end
+
+\define tiddler_sequencer_path(tid)
+<$list filter="[title[$tid$]]">
+<$list filter="[all[current]get[tiddler_sequencer_parent]]">
+<<_rec_path>>
+</$list>
+</$list>
+\end
