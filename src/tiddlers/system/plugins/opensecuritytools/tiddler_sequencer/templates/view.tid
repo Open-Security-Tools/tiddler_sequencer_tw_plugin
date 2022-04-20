@@ -1,0 +1,32 @@
+created: 20220415050630621
+list-after: tiddler_sequencer_parent_view_template
+modified: 20220420195008503
+tags: $:/tags/ViewTemplate
+title: $:/plugins/opensecuritytools/tiddler_sequencer/templates/view
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]has[tiddler_sequencer_parent]] [all[current]has[tiddler_sequencer_list]] +[first[]]" variable="ignore01">
+<div class="tiddler_sequencer_footer">
+<div>
+<$macrocall $name=tiddler_sequencer_prev tid=<<currentTiddler>>/>
+</div>
+<div>
+<$macrocall $name=tiddler_sequencer_path tid=<<currentTiddler>>/>
+<br>
+<$set name="state" value=<<qualify """$:/state/something-$(currentTiddler)$""">>>
+<$set name="tooltip" value={{!!tooltip}}>
+<$button popup=<<state>> class="pop-btn tc-btn-invisible" tooltip=<<tooltip>> selectedClass="pop-btn-selected">
+<svg width="22pt" height="22pt" class="tc-image-tmd-table-of-contents tc-image-button" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+</$button>
+</$set>
+<$reveal type="popup" state=<<state>> animate="$animate$" position="above" class="tc-popup pop-popup pretty sequencer-tiddler" style="text-align: left;">
+
+<<tiddler_sequencer_toc>>
+</$reveal>
+</$set>
+</div>
+<div>
+<$macrocall $name=tiddler_sequencer_next tid=<<currentTiddler>>/>
+</div>
+</div>
+</$list>

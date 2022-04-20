@@ -1,0 +1,21 @@
+created: 20220312215441379
+modified: 20220420195202753
+title: Welcome
+type: text/vnd.tiddlywiki
+
+This website is a [[tiddlywiki|https://tiddlywiki.com/]] to publish and provide some [[documentation|Documentation]] for the `tiddler_sequencer` plugin. 
+
+See [[GitHub|https://github.com/Open-Security-Tools/tiddler_sequencer_tw_plugin]] for the code.
+The plugin is released under [[MIT license|$:/plugins/opensecuritytools/tiddler_sequencer/license]].
+
+<$list filter="[title[$:/plugins/opensecuritytools/tiddler_sequencer]get[version]]">
+<div class="versionblock">The latest Tiddler Sequencer plugin version is <span class="versionnumber"><<currentTiddler>></span>
+</div>
+</$list>
+
+# Dependencies:
+#* [[$:/plugins/flibbles/relink]]
+# The tiddler sequencer plugin:
+#* [[$:/plugins/opensecuritytools/tiddler_sequencer]]
+
+If upgrading the plugin then you only need to drag'n'drop in the later version of [[$:/plugins/opensecuritytools/tiddler_sequencer]]. 

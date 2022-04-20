@@ -1,0 +1,9 @@
+caption: Templates
+created: 20220419163245848
+modified: 20220420193457261
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/templates
+type: text/vnd.tiddlywiki
+
+* [[$:/plugins/opensecuritytools/tiddler_sequencer/templates/edit]]
+* [[$:/plugins/opensecuritytools/tiddler_sequencer/templates/view]]

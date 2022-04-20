@@ -1,0 +1,10 @@
+caption: Styles
+created: 20220419163245106
+modified: 20220420194558494
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/styles
+type: text/vnd.tiddlywiki
+
+
+* [[$:/plugins/opensecuritytools/tiddler_sequencer/styles/footer]]
+* [[$:/plugins/opensecuritytools/tiddler_sequencer/styles/pop]]

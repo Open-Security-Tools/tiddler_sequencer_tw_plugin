@@ -1,0 +1,13 @@
+caption: Handling Title Renaming
+created: 20220419165331880
+modified: 20220420193334663
+tiddler_sequencer_parent: $:/plugins/opensecuritytools/tiddler_sequencer/docs/implementation
+title: $:/plugins/opensecuritytools/tiddler_sequencer/docs/handling_renaming
+type: text/vnd.tiddlywiki
+
+The two fields are configured to automagically get updated when tiddlers are renamed. Using the excellent relink plugin (see https://github.com/flibbles/tw5-relink).
+
+The relink configuration is provided by these two tiddlers: 
+
+* $:/config/flibbles/relink/fields/tiddler_sequencer_list
+* $:/config/flibbles/relink/fields/tiddler_sequencer_parent

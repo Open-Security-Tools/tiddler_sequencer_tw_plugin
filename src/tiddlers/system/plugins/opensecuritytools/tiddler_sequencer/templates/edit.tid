@@ -1,0 +1,34 @@
+created: 20220418204406569
+modified: 20220420193445891
+tags: $:/tags/EditTemplate
+title: $:/plugins/opensecuritytools/tiddler_sequencer/templates/edit
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]has[tiddler_sequencer_list]]">
+<$list filter="[all[current]get[draft.of]]" variable=parent>
+Contents:
+<ol>
+<$list filter="[list[!!tiddler_sequencer_list]]">
+<li>
+<$link to={{!!title}}>
+<$list filter="[all[current]get[caption]else<currentTiddler>]">
+<$view field=title/>
+</$list>
+</$link>
+<$list filter="[all[current]!tiddler_sequencer_parent<parent>]">
+<$button>
+<$action-setfield tiddler_sequencer_parent=<<parent>>/>
+Set Parent Link
+</$button>
+</$list>
+
+</li>
+</$list>
+</ol>
+
+Draggable:
+
+<$macrocall $name=list-links-draggable tiddler=<<currentTiddler>> field=tiddler_sequencer_list/>
+
+</$list>
+</$list>

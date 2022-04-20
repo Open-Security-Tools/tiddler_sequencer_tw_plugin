@@ -1,0 +1,35 @@
+created: 20220417053330712
+modified: 20220420193558551
+tags: $:/tags/Macro
+title: $:/plugins/opensecuritytools/tiddler_sequencer/macros/tiddler_sequencer_traverse_test
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define traverse_test()
+<tr>
+<td><$view field="title"/></td>
+<td><$view field="caption"/></td>
+<td><$macrocall $name=tiddler_sequencer_prev tid=<<currentTiddler>>/></td>
+<td><$macrocall $name=tiddler_sequencer_path tid=<<currentTiddler>>/></td>
+<td><$macrocall $name=tiddler_sequencer_next tid=<<currentTiddler>>/></td>
+</tr>
+<$list filter="[list[!!tiddler_sequencer_list]]">
+<<traverse_test>>
+</$list>
+\end
+
+\define tiddler_sequencer_traverse_test(tid)
+<$list filter="[title[$tid$]]">
+<table>
+<tr>
+<th>Title</th>
+<th>Caption</th>
+<th>Previous</th>
+<th>Path</th>
+<th>Next</th>
+</tr>
+<<traverse_test>>
+</table>
+</$list>
+\end
